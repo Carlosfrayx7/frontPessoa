@@ -47,7 +47,7 @@ const IndexView = ({ handleCadastrar, openModal, setOpenModal, pessoa, openModal
 
         </Box>
         <ModalCadastro openModal={openModal} setOpenModal={setOpenModal} handleGetPessoa={handleGetPessoa} />
-        <ModalEditar openModalEditar={openModalEditar} setOpenModalEditar={setOpenModalEditar} pessoa={dados} setPessoa={setPessoa}  />
+        <ModalEditar openModalEditar={openModalEditar} setOpenModalEditar={setOpenModalEditar} pessoa={dados} setPessoa={setPessoa}   />
         <ModalExcluir openModalExcluir={openModalExcluir} setOpenModalExcluir={setOpenModalExcluir} idPessoa={idPessoa} handleGetPessoa={handleGetPessoa} />
       </Box>
     </Box>

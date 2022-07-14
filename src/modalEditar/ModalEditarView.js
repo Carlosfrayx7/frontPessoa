@@ -34,16 +34,16 @@ function ModalEditarView({ handleAtualizarPessoa, handleChange, openModalEditar,
           
                         <Grid item xs={7}>
                             <FormControl style={{ width: '165%', margin: '10px', marginTop: '5%' }}>
-                                <TextField id="outlined-basic" label="Nome" name="nome" defaultValue={nome} onChange={(e) => handleChange(e)} variant="outlined" />
+                                <TextField id="outlined-basic" label="Nome" name="nome"  defaultValue={nome} onChange={(e) => handleChange(e)} variant="outlined" />
                             </FormControl>
                             <FormControl style={{ height: '100%', width: '165%', margin: '10px', marginTop: '5%' }}>
-                                <TextField id="outlined-basic" label="E-mail" name="email" value={email} onChange={(e) => handleChange(e)} variant="outlined" />
+                                <TextField id="outlined-basic" label="E-mail" name="email" defaultValue={email} onChange={(e) => handleChange(e)} variant="outlined" />
                             </FormControl>
                             <FormControl style={{ height: '100%', width: '165%', margin: '10px', marginTop: '5%' }}>
-                                <TextField id="outlined-basic" label="Telefone"  name="telefone" value={telefone} onChange={(e) => handleChange(e)}variant="outlined" />
+                                <TextField id="outlined-basic" label="Telefone"  name="telefone" defaultValue={telefone} onChange={(e) => handleChange(e)}variant="outlined" />
                             </FormControl>
                             <FormControl style={{ height: '100%', width: '165%', margin: '10px', marginTop: '5%' }}>
-                                <TextField id="outlined-basic" label="WhatsApp" name="whatsapp" value={whatsapp}  onChange={(e) => handleChange(e)}variant="outlined" />
+                                <TextField id="outlined-basic" label="WhatsApp" name="whatsapp" defaultValue={whatsapp}  onChange={(e) => handleChange(e)}variant="outlined" />
                             </FormControl>
                             <FormControl style={{ height: '100%', width: '165%', margin: '10px', marginTop: '5%' }} >
                                 <Box style={{ width: '100%', height: '5%' }} mb={1.5}>
