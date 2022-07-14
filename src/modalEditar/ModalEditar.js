@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { ax } from "../services/Api";
 import ModalEditarView from './ModalEditarView';
 
 const ModalEditar = ({ openModalEditar, setOpenModalEditar, pessoa, setPessoa }) => {
 
-    const baseUrl = "https://localhost:44360/api/pessoa";
     var nome = pessoa.nome;
     var email = pessoa.email;
     var telefone = pessoa.telefone;
@@ -24,27 +24,21 @@ const ModalEditar = ({ openModalEditar, setOpenModalEditar, pessoa, setPessoa })
         console.log(pessoa);
     };
 
-
-
-
     const handleAtualizarPessoa = async () => {
-        await axios.post(baseUrl + "/updatepessoa", dados).then(response => {
-            handleGetPessoa();
-            setOpenModalEditar(false);
+        await ax.post("/updatepessoa", dados).then(response => {
             setDados(response.data);
-
-        })
-
-    }
+        });
+        setOpenModalEditar(false);
+        handleGetPessoa();
+    };
 
     const handleGetPessoa = async () => {
-        await axios.get(baseUrl).then(response => {
+        await ax.get().then(response => {
             setPessoa(response.data)
         }).catch(error => {
             console.log(error);
         })
     };
-
 
     return (
         <ModalEditarView {...{ openModalEditar, handleCloseModal, pessoa, handleChange, handleAtualizarPessoa, nome, email, telefone, whatsapp }} />

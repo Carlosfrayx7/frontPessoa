@@ -1,11 +1,8 @@
-import axios from "axios";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ax } from "../services/Api";
 import ModalCadastroView from './ModalCadastroView';
 
 const ModalCadastro = ({ openModal, setOpenModal }) => {
-
-    const baseUrl = "https://localhost:44360/api/pessoa";
-    
 
     const handleCloseModal = () => {
         setOpenModal(false);
@@ -27,23 +24,26 @@ const ModalCadastro = ({ openModal, setOpenModal }) => {
     };
 
     const handleCadastrarPessoa = async () => {
-        await axios.post(baseUrl +"/createpessoa", pessoa).then(response=>{
+        await ax.post("/createpessoa", pessoa).then(response => {
             setPessoa(response.data);
-            handleGetPessoa();
-            handleCloseModal();
-        }).catch(error =>{
-            console.log(error);
-        })
+            
+        });
+    
+        handleCloseModal();
+        handleGetPessoa();
     };
 
     const handleGetPessoa = async () => {
-        await axios.get(baseUrl).then(response => {
+        await ax.get().then(response => {
             setPessoa(response.data)
         }).catch(error => {
             console.log(error);
         })
     };
 
+    useEffect(() => {
+        handleGetPessoa();
+    }, []);
 
     return (
         <ModalCadastroView {...{ openModal, handleCloseModal, handleChange, handleCadastrarPessoa }} />

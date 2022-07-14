@@ -3,14 +3,13 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
-        height: "50%",
+        height: "60%",
         width: "40%",
         backgroundColor: theme.palette.background.paper,
         borderRadius: '5px',
         boxShadow: theme.shadows[5],
         margin: '0px',
         verticalAlign: 'center',
-        //display: 'flex',
 
     },
     modal: {

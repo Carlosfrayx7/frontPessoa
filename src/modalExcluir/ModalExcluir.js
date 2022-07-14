@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useState } from 'react';
+import { ax } from "../services/Api";
 import ModalExcluirView from './ModalExcluirView';
 
-const ModalExcluir = ({ openModalExcluir, setOpenModalExcluir, idPessoa, handleGetPessoa }) => {
-
-    const baseUrl = "https://localhost:44360/api/pessoa";
-    
+const ModalExcluir = ({ openModalExcluir, setOpenModalExcluir, idPessoa, setPessoa }) => {
 
     const handleCloseModal = () => {
         setOpenModalExcluir(false);
@@ -14,15 +12,20 @@ const ModalExcluir = ({ openModalExcluir, setOpenModalExcluir, idPessoa, handleG
     const [dados, setDados] = useState();
 
     const handleDeletar = async (idPessoa) => {
-        await axios.delete(baseUrl + `/deletepessoa/${idPessoa}`).then(response => {
+        await ax.delete(`/deletepessoa/${idPessoa}`).then(response => {
             setDados(response.data)
-            handleGetPessoa();
-        }).catch(error => {
-            console.log(error);
         });
         handleCloseModal();
+        handleGetPessoa();
     };
 
+    const handleGetPessoa = async () => {
+        await ax.get().then(response => {
+            setPessoa(response.data)
+        }).catch(error => {
+            console.log(error);
+        })
+    };
 
     return (
         <ModalExcluirView {...{ openModalExcluir, handleCloseModal, handleDeletar, idPessoa }} />

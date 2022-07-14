@@ -36,7 +36,7 @@ const IndexView = ({ handleCadastrar, openModal, setOpenModal, pessoa, openModal
 
           </Box>
           <Box style={{ display: 'table', width: '100%', height: '70%' }}>
-            <Grid item xs={3} style={{ marginTop: '15px', marginBottom: '15px', display: 'flex', justifyContent: 'flex-end' }}>
+            <Grid item xs={3} style={{ marginTop: '15px', marginBottom: '15px',marginLeft:'91.5%', display: 'flex', justifyContent: 'flex-end' }}>
               <Grid item xs={9} style={{ display: 'flex' }}>
                 <Button variant="contained" color="primary" className={classes.btnInserir} onClick={handleCadastrar}>Cadastrar</Button>
               </Grid>
@@ -46,9 +46,9 @@ const IndexView = ({ handleCadastrar, openModal, setOpenModal, pessoa, openModal
           <Pessoa pessoa={pessoa} handleEditar={handleEditar} handleDelete={handleDelete} />
 
         </Box>
-        <ModalCadastro openModal={openModal} setOpenModal={setOpenModal} handleGetPessoa={handleGetPessoa} />
+        <ModalCadastro openModal={openModal} setOpenModal={setOpenModal} />
         <ModalEditar openModalEditar={openModalEditar} setOpenModalEditar={setOpenModalEditar} pessoa={dados} setPessoa={setPessoa}   />
-        <ModalExcluir openModalExcluir={openModalExcluir} setOpenModalExcluir={setOpenModalExcluir} idPessoa={idPessoa} handleGetPessoa={handleGetPessoa} />
+        <ModalExcluir openModalExcluir={openModalExcluir} setOpenModalExcluir={setOpenModalExcluir} idPessoa={idPessoa} setPessoa={setPessoa}/>
       </Box>
     </Box>
   );
