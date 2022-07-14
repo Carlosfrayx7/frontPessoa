@@ -13,7 +13,7 @@ import ModalExcluir from "../modalExcluir/ModalExcluir";
 import Pessoa from "../pessoa/Pessoa";
 import useStyles from './IndexStyle';
 
-const IndexView = ({ handleCadastrar, openModal, setOpenModal, pessoa, openModalEditar, setOpenModalEditar, handleEditar, dados, setOpenModalExcluir, openModalExcluir, handleDelete, idPessoa, handleGetPessoa, handleChange, pessoa2, handleAtualizarPessoa }) => {
+const IndexView = ({ handleCadastrar, openModal, setOpenModal, pessoa, openModalEditar, setOpenModalEditar, handleEditar, dados, setOpenModalExcluir, openModalExcluir, handleDelete, idPessoa, handleGetPessoa, setPessoa }) => {
 
   const classes = useStyles();
   return (
@@ -47,7 +47,7 @@ const IndexView = ({ handleCadastrar, openModal, setOpenModal, pessoa, openModal
 
         </Box>
         <ModalCadastro openModal={openModal} setOpenModal={setOpenModal} handleGetPessoa={handleGetPessoa} />
-        <ModalEditar openModalEditar={openModalEditar} setOpenModalEditar={setOpenModalEditar} pessoa={dados}  handleAtualizarPessoa={handleAtualizarPessoa}  />
+        <ModalEditar openModalEditar={openModalEditar} setOpenModalEditar={setOpenModalEditar} pessoa={dados} setPessoa={setPessoa}  />
         <ModalExcluir openModalExcluir={openModalExcluir} setOpenModalExcluir={setOpenModalExcluir} idPessoa={idPessoa} handleGetPessoa={handleGetPessoa} />
       </Box>
     </Box>

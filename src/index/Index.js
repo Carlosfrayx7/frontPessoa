@@ -50,7 +50,7 @@ const Index = () => {
 
 
     return (
-        <IndexView pessoa={pessoa} dados={dados}{...{ handleCadastrar, openModal, setOpenModal, openModalEditar, setOpenModalEditar, handleEditar, dados, openModalExcluir, setOpenModalExcluir, handleDelete, idPessoa }} />
+        <IndexView pessoa={pessoa} dados={dados}{...{ handleCadastrar, openModal, setOpenModal, openModalEditar, setOpenModalEditar, handleEditar, dados, openModalExcluir, setOpenModalExcluir, handleDelete, idPessoa, setPessoa }} />
     )
 }
 
